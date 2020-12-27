@@ -3,7 +3,7 @@ import {ButtonFC} from "./Button";
 import {useDispatch, useSelector} from "react-redux";
 import {selectAll} from "../Redux/selectors";
 import {Display} from "./Display";
-import {incValue} from "../Redux/actions";
+import {incValue, resetValue} from "../Redux/actions";
 
 
 export const DisplayContainer = () => {
@@ -16,10 +16,10 @@ export const DisplayContainer = () => {
 
 	const inc = () => {
 		dispatch(incValue())
-		alert("inc")
 	}
 	const reset = () => {
-		alert("reset")
+		dispatch(resetValue())
+
 	}
 
 	return (

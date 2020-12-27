@@ -41,6 +41,12 @@ const Reducer = (state: initialStateType = InitialState, action: ActionsReducerT
 				startValueDisplay: state.startValueDisplay+1
 			}
 		}
+		case ACTIONS_TYPE.RESET: {
+			return {
+				...state,
+				startValueDisplay: state.startValue
+			}
+		}
 		default:
 			return state
 	}

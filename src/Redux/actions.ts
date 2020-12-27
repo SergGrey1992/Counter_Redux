@@ -3,6 +3,7 @@ export enum ACTIONS_TYPE {
 	MAX_VALUE = "MAX_VALUE",
 	SET_DISPLAY = "SET_DISPLAY",
 	INC_DISPLAY = "INC_DISPLAY",
+	RESET = "RESET"
 }
 
 export type ChangeStartValueType = {
@@ -23,6 +24,9 @@ export type SetValueType = {
 export type incValueType = {
 	type: ACTIONS_TYPE.INC_DISPLAY
 }
+export type resetValueType = {
+	type: ACTIONS_TYPE.RESET
+}
 export const ChangeStartValue = ( startValue: number ): ChangeStartValueType => {
 	return { type:ACTIONS_TYPE.START_VALUE, payload: { startValue } }
 }
@@ -36,5 +40,8 @@ export const SetValue = (): SetValueType => {
 export const incValue = (): incValueType => {
 	return { type:ACTIONS_TYPE.INC_DISPLAY }
 }
+export const resetValue = (): resetValueType => {
+	return { type:ACTIONS_TYPE.RESET }
+}
 
-export type ActionsReducerTypes = ChangeStartValueType | ChangeMaxValueType | SetValueType | incValueType
+export type ActionsReducerTypes = ChangeStartValueType | ChangeMaxValueType | SetValueType | incValueType | resetValueType
