@@ -1,15 +1,16 @@
 import React from "react";
-import {ButtonFC} from "./Button";
 import {useDispatch, useSelector} from "react-redux";
 import {selectAll} from "../Redux/selectors";
 import {Display} from "./Display";
 import {incValue, resetValue} from "../Redux/actions";
 
-
 export const DisplayContainer = () => {
 	const {
 		startValueDisplay,
 		maxValueDisplay,
+		startValue,
+		disabledButtonReset,
+		disabledButtonInc
 	} = useSelector(selectAll);
 
 	let dispatch = useDispatch();
@@ -24,7 +25,14 @@ export const DisplayContainer = () => {
 
 	return (
 		<div>
-			<Display startValueDisplay={startValueDisplay} inc={inc} reset={reset}/>
+			<Display startValueDisplay={startValueDisplay}
+							 startValue={startValue}
+							 inc={inc}
+							 reset={reset}
+							 maxValueDisplay={maxValueDisplay}
+							 disabledButtonInc={disabledButtonInc}
+							 disabledButtonReset={disabledButtonReset}
+			/>
 		</div>
 	)
 }

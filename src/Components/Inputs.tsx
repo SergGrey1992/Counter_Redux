@@ -4,31 +4,33 @@ import {ButtonFC} from "./Button";
 type PropsType = {
 	startValue: number
 	maxValue: number
+	disabledButtonSet: boolean
 	changeStartValue: (e: React.ChangeEvent<HTMLInputElement>) => void
 	changeMaxValue: (e: React.ChangeEvent<HTMLInputElement>) => void
 	func: () => void
 }
-
 export const Inputs: React.FunctionComponent<PropsType> = (
-	{startValue,
+	{
+		startValue,
 		maxValue,
+		disabledButtonSet,
 		changeStartValue,
 		changeMaxValue,
 		func
 	}) => {
-return (
+	return (
 		<div>
 			<label>
-StartValue:
-				<input type="number"  value={startValue} onChange={changeStartValue}/>
+				StartValue:
+				<input type="number" value={startValue} onChange={changeStartValue}/>
 			</label>
 			<label>
-MaxValue:
-				<input type="number"  value={maxValue} onChange={changeMaxValue} />
+				MaxValue:
+				<input type="number" value={maxValue} onChange={changeMaxValue}/>
 			</label>
-
 			<ButtonFC title={'SET'}
 								func={func}
+								disabled={disabledButtonSet}
 			/>
 		</div>
 	)
