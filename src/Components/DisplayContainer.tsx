@@ -12,17 +12,13 @@ export const DisplayContainer = () => {
 		disabledButtonReset,
 		disabledButtonInc
 	} = useSelector(selectAll);
-
 	let dispatch = useDispatch();
-
 	const inc = () => {
 		dispatch(incValue())
 	}
 	const reset = () => {
 		dispatch(resetValue())
-
 	}
-
 	return (
 		<div>
 			<Display startValueDisplay={startValueDisplay}

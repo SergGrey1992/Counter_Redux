@@ -21,6 +21,9 @@ export type ChangeMaxValueType = {
 }
 export type SetValueType = {
 	type: ACTIONS_TYPE.SET_DISPLAY
+	payload: {
+		startValue: number
+	}
 }
 export type incValueType = {
 	type: ACTIONS_TYPE.INC_DISPLAY
@@ -38,8 +41,8 @@ export const ChangeMaxValue = ( maxValue: number ): ChangeMaxValueType => {
 	return { type:ACTIONS_TYPE.MAX_VALUE, payload: { maxValue } }
 }
 
-export const SetValue = (): SetValueType => {
-	return { type:ACTIONS_TYPE.SET_DISPLAY }
+export const SetValue = (startValue: number): SetValueType => {
+	return { type:ACTIONS_TYPE.SET_DISPLAY, payload: {startValue} }
 }
 export const incValue = (): incValueType => {
 	return { type:ACTIONS_TYPE.INC_DISPLAY }

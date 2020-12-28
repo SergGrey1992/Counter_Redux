@@ -1,37 +1,24 @@
 import React from "react";
-import {ButtonFC} from "./Button";
 
 type PropsType = {
-	startValue: number
-	maxValue: number
-	disabledButtonSet: boolean
-	changeStartValue: (e: React.ChangeEvent<HTMLInputElement>) => void
-	changeMaxValue: (e: React.ChangeEvent<HTMLInputElement>) => void
-	func: () => void
+	label: string
+	value: number
+	changeValue: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
-export const Inputs: React.FunctionComponent<PropsType> = (
+export const InputComponent: React.FunctionComponent<PropsType> = (
 	{
-		startValue,
-		maxValue,
-		disabledButtonSet,
-		changeStartValue,
-		changeMaxValue,
-		func
+		value,
+		label,
+		changeValue,
 	}) => {
 	return (
 		<div>
 			<label>
-				StartValue:
-				<input type="number" value={startValue} onChange={changeStartValue}/>
+				{label}:
+				<input type="number" value={value} onChange={changeValue}/>
 			</label>
-			<label>
-				MaxValue:
-				<input type="number" value={maxValue} onChange={changeMaxValue}/>
-			</label>
-			<ButtonFC title={'SET'}
-								func={func}
-								disabled={disabledButtonSet}
-			/>
+
+
 		</div>
 	)
 }

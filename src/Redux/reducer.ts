@@ -20,8 +20,7 @@ let InitialState: initialStateType = {
 	disabledButtonReset: false,
 	error: ""
 }
-// localStorage.setItem("startValue", startValue.toString())
-// localStorage.setItem("maxValue", maxValue.toString())
+
 const Reducer = (state: initialStateType = InitialState, action: ActionsReducerTypes): initialStateType => {
 	switch (action.type) {
 		case ACTIONS_TYPE.START_VALUE : {
@@ -45,7 +44,6 @@ const Reducer = (state: initialStateType = InitialState, action: ActionsReducerT
 			}
 		}
 		case ACTIONS_TYPE.SET_DISPLAY: {
-			debugger
 			if (state.error !== "") {
 				return {
 					...state,
@@ -80,7 +78,6 @@ const Reducer = (state: initialStateType = InitialState, action: ActionsReducerT
 			}
 		}
 		case ACTIONS_TYPE.RESET: {
-			debugger
 			if (state.error !== "" && state.startValue !== state.maxValue) {
 				return {
 					...state,
